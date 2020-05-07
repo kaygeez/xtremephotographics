@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "xcskubecluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "xcskubecluster"
+    spec:
+      containers:
+        - name: "xcskubecluster"
+          image: "xcskubecluster.azurecr.io/xcskubecluster"
+          ports:
+          - containerPort: 80
